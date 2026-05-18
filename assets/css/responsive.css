@@ -80,4 +80,13 @@
         width: 100%;
         min-height: 50vh;
     }
+
+    .discover-section {
+        padding: var(--space-2xl) var(--space-md);
+        min-height: auto;
+    }
+    
+    .discover-content {
+        gap: var(--space-lg);
+    }
 }
