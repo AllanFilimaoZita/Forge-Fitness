@@ -66,4 +66,18 @@
     .healthy-heading {
         width: 100%;
     }
+
+    .journey-section {
+        flex-direction: column-reverse;
+        min-height: auto;
+    }
+
+    .journey-content {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .journey-visual {
+        width: 100%;
+        min-height: 50vh;
+    }
 }
