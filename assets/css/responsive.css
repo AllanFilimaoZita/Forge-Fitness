@@ -46,7 +46,19 @@
     }
 
     .learn-section {
-        padding: var(--space-3xl) var(--space-md);
+        padding: var(--space-2xl) var(--space-md);
+    }
+
+    .learn-carousel {
+        gap: var(--space-lg);
+    }
+
+    .card {
+        min-width: 260px;
+    }
+
+    .card-image {
+        height: 200px;
     }
 
     .healthy-section {

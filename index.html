@@ -80,70 +80,97 @@
         </section>
 
         <!-- ==================== Learn Section ==================== -->
-        <section class="learn-section" id="learn-section">
+        <section class="learn-section" id="learn-section" aria-labelledby="learn-heading">
 
-            <header class="learn-header" id="learn-header">
-                <h2 class="learn-heading" id="learn-header">Learn With Us</h2>
-                <p class="learn-description" id="learn-description">
+            <div class="learn-header">
+                <h2 class="learn-heading" id="learn-heading">Learn with us</h2>
+                <p class="learn-description">
                     But must I explain to you how all this mistaken idea of denouncing pleasure and praising pain was
                     born
                     and I will give you a complete account of the system.
                 </p>
-            </header>
+            </div>
 
-            <div class="learn-carousel-wrapper" id="learn-carusel-wrapper">
-
-                <div class="learn-carousel" id="learn-carousel" role="list" aria-label="Aulas de yoga disponíveis">
+            <div class="learn-carousel-wrapper">
+                <div class="learn-carousel" id="learn-carousel" role="list" aria-label="Aulas disponíveis">
 
                     <article class="card" role="listitem">
-                        <img src="assets/images/img44.png" alt="Aula de rotina matinal para iniciantes"
-                            class="card-image" width="260" height="200" loading="lazy" />
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/img44.png" alt="Morning Routine For Beginners" class="card-image"
+                                loading="lazy">
+                            <div class="play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                                </svg>
+                            </div>
+                        </div>
                         <h3 class="card-title">Morning Routine For Beginners</h3>
                         <p class="card-meta">30 mins · relaxation &amp; stretching</p>
                     </article>
 
                     <article class="card" role="listitem">
-                        <img src="assets/images/img30.png" alt="Aula de yoga em casa" class="card-image" width="260"
-                            height="200" loading="lazy" />
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/img30.png" alt="Yoga In House" class="card-image" loading="lazy">
+                            <div class="play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                                </svg>
+                            </div>
+                        </div>
                         <h3 class="card-title">Yoga In House</h3>
                         <p class="card-meta">30 mins · relaxation &amp; stretching</p>
                     </article>
-
+                    
                     <article class="card" role="listitem">
-                        <img src="assets/images/img26.png" alt="Aula de yoga para equilíbrio" class="card-image"
-                            width="260" height="200" loading="lazy" />
-                        <h3 class="card-title">Balance Yoga</h3>
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/img30.png" alt="Yoga In House" class="card-image" loading="lazy">
+                            <div class="play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Yoga In House</h3>
                         <p class="card-meta">30 mins · relaxation &amp; stretching</p>
                     </article>
-
+                    
                     <article class="card" role="listitem">
-                        <img src="assets/images/img40.jpg" alt="Aula de yoga na praia" class="card-image" width="260"
-                            height="200" loading="lazy" />
-                        <h3 class="card-title">Yoga In Beach</h3>
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/img30.png" alt="Yoga In House" class="card-image" loading="lazy">
+                            <div class="play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Yoga In House</h3>
                         <p class="card-meta">30 mins · relaxation &amp; stretching</p>
                     </article>
-
                 </div>
 
-                <div class="learn-controls" role="group" aria-label="Controles do carrossel">
-                    <button class="learn-nav-btn" id="prevBtn" aria-label="Aula anterior">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z" />
+                <div class="learn-controls">
+                    <button class="learn-nav-btn" id="prevBtn" aria-label="Anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                         </svg>
                     </button>
-                    <button class="learn-nav-btn" id="nextBtn" aria-label="Próxima aula">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="currentColor" aria-hidden="true">
-                            <path
-                                d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z" />
+                    <button class="learn-nav-btn" id="nextBtn" aria-label="Próxima">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
                         </svg>
                     </button>
                 </div>
-
             </div>
-
         </section>
 
         <section class="healthy-section" id="healthy-section" aria-labelledby="healthyHeading">
@@ -180,7 +207,8 @@
             </div>
 
             <div class="journey-visual" aria-hidden="true">
-                <img src="assets/images/img22.png" alt="" class="journey-image" width="500" height="600" loading="lazy" />
+                <img src="assets/images/img22.png" alt="" class="journey-image" width="500" height="600"
+                    loading="lazy" />
             </div>
         </section>
 
