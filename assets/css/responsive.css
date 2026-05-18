@@ -48,4 +48,22 @@
     .learn-section {
         padding: var(--space-3xl) var(--space-md);
     }
+
+    .healthy-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .healthy-gallery {
+        width: 100%;
+        min-height: 50vh;
+    }
+
+    .healthy-content {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .healthy-heading {
+        width: 100%;
+    }
 }
