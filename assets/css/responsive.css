@@ -18,4 +18,30 @@
     .header {
         padding: 0 var(--space-md);
     }
+
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: 50vh;
+    }
+
+    .hero-image {
+        position: relative;
+        left: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-scroll-button {
+        bottom: 1rem;
+        right: 1rem;
+    }
 }
