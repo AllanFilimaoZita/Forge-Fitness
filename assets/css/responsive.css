@@ -92,4 +92,11 @@
         width: 100%;
         min-height: 50vh;
     }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
 }

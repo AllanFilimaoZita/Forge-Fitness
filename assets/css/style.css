@@ -649,9 +649,7 @@ button {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    border: 1px solid rgba(255,255,255,0.2);
     font-size: 1.3rem;
     display: flex;
     align-items: center;
@@ -664,4 +662,91 @@ button {
     color: var(--dark-color);
     border-color: var(--terracotta-color);
     transform: scale(1.05);
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    background-color: var(--cream-color);
+}
+
+.footer-main {
+    padding: var(--space-2xl) var(--space-2xl);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.footer-logo img {
+    height: 48px;
+    width: auto;
+}
+
+.footer-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+    max-width: 260px;
+    opacity: 0.85;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: var(--space-sm);
+}
+
+.social-icons a {
+    font-size: 1.55rem;
+    color: var(--dark-color);
+    transition: var(--transition-base);
+}
+
+.social-icons a:hover {
+    color: var(--terracotta-color);
+    transform: translateY(-3px);
+}
+
+.footer-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    color: var(--dark-color);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.footer-links a {
+    color: var(--dark-color);
+    opacity: 0.8;
+    transition: var(--transition-base);
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--terracotta-color);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    background-color: var(--dark-color);
+    color: var(--cream-color);
+    text-align: center;
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
