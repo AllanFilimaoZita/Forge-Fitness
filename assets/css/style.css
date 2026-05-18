@@ -231,3 +231,111 @@ button {
     opacity: 0.85;
     transform: translateY(3px);
 }
+
+/* ==================== Learn Section ==================== */
+.learn-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--pace-3xl) var(--space-2xl);
+    background-color: var(--dark-color);
+}
+
+.learn-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.learn-heading {
+    font-size: var(--font-size-hero);
+    font-weight: 700;
+    color: var(--cream-color);
+    line-height: 1.1;
+}
+
+.learn-description {
+    font-size: var(--font-size-sm);
+    color: var(--cream-color);
+    line-height: 1.6;
+    max-width: 580px;
+    opacity: 0.6;
+}
+
+.learn-carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.learn-carousel {
+    display: flex;
+    gap: var(--space-lg);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.learn-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==================== Card Components ==================== */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    min-width: 260px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    transition: transform var(--transition-base);
+}
+
+.card:hover .card-image {
+    transform: scale(1.02);
+}
+
+.card-title {
+    font-size: var(--fs-base);
+    font-weight: 600;
+    color: var(--cream-color);
+    line-height: 1.3;
+}
+
+.card-meta {
+    font-size: var(--fs-xs);
+    color: var(--terracotta-color);
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.learn-controls {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.learn-nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background-color: var(--cream-color);
+    color: var(--dark-color);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.learn-nav-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
