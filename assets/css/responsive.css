@@ -1,0 +1,21 @@
+/* ==================== Import Extwernal CSS ==================== */
+@import url('assets/css/style.css');
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    :root {
+        --space-2xl: 3rem;;
+        --space-3xl: 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --space-2xl: 1.5rem;
+        --space-3xl: 4rem;
+    }
+    
+    .header {
+        padding: 0 var(--space-md);
+    }
+}

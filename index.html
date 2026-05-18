@@ -15,10 +15,32 @@
     <title>Forge Fitness | Landing Page</title>
     
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
+    <!-- ==================== Header ==================== -->
+    <header class="header" id="header">
+        <button header-toggle id="header-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                aria-hidden="true" focusable="false">
+                <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z" />
+            </svg>
+        </button>
+
+        <a href="/" class="header-logo" aria-label="Forge Fitness - Página Inicial">
+            <img src="assets/images/logo-rb.png" alt="Forge Fitness" width="120" height="40"">
+        </a>
+
+        <a href="/cart" class="header-cart" aria-label="Ver Carrinho de Compras">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                aria-hidden="true" focusable="false">
+                <path
+                    d="M7.00488 7.99966V5.99966C7.00488 3.23824 9.24346 0.999664 12.0049 0.999664C14.7663 0.999664 17.0049 3.23824 17.0049 5.99966V7.99966H20.0049C20.5572 7.99966 21.0049 8.44738 21.0049 8.99966V20.9997C21.0049 21.5519 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.5519 3.00488 20.9997V8.99966C3.00488 8.44738 3.4526 7.99966 4.00488 7.99966H7.00488ZM7.00488 9.99966H5.00488V19.9997H19.0049V9.99966H17.0049V11.9997H15.0049V9.99966H9.00488V11.9997H7.00488V9.99966ZM9.00488 7.99966H15.0049V5.99966C15.0049 4.34281 13.6617 2.99966 12.0049 2.99966C10.348 2.99966 9.00488 4.34281 9.00488 5.99966V7.99966Z" />
+            </svg>
+        </a>
+    </header>
     
     <script src="assets/js/script.js"></script>
 </body>

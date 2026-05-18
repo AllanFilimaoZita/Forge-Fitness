@@ -87,13 +87,13 @@ button {
     --font-size-hero: clamp(2rem, 5vw, 3rem); /* 32px - 48px */
 
     /* ========== Espaçamento ========== */
-    --spacing-xs: 0.5rem; /* 8px */
-    --spacing-sm: 1rem; /* 16px */
-    --spacing-md: 1.5rem; /* 24px */
-    --spacing-lg: 2rem; /* 32px */  
-    --spacing-xl: 4rem; /* 48px */
-    --spacing-2xl: 5rem; /* 80px */
-    --spacing-3xl: 10rem; /* 96px */
+    --space-xs: 0.5rem; /* 8px */
+    --space-sm: 1rem; /* 16px */
+    --space-md: 1.5rem; /* 24px */
+    --space-lg: 2rem; /* 32px */  
+    --space-xl: 4rem; /* 48px */
+    --space-2xl: 5rem; /* 80px */
+    --space-3xl: 10rem; /* 96px */
 
     /* ========== Layout ========== */
     --header-height: 60px;
@@ -129,4 +129,31 @@ button {
 .btn-dark {
     background-color: var(--dark-color);
     color: var(--cream-color);
+}
+
+/* ==================== Header ==================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    padding: 0 var(--space-2xl);
+    background-color: var(--cream-color);
+    border-bottom: var(--border-header);
+    will-change: transform;
+}
+
+.header-menu,
+.header-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--dark-color);
+    transition: var(--transition-fast);
+    border-radius: var(--radius-sm);
 }
