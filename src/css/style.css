@@ -1,0 +1,132 @@
+/* ==================== Reset ==================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'BodrumSans', Georgia, serif;
+    background-color: var(--cream-color);
+    color: var(--dark-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--terracotta-color);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* ==================== Fontes =================== */
+@font-face {
+    font-family: 'BodrumSans';
+    src: url('../fonts/BodrumSans-Regular.woff2') format('woff2'),
+         url('../fonts/BodrumSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BodrumSans';
+    src: url('assets/fonts/BodrumSans-15Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BodrumSans';
+    src: url('assets/fonts/BodrumSans-16Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==================== Variáveis CSS ==================== */
+:root {
+    /* ========== Cores ========== */
+    --cream-color: #FEF4EB;
+    --terracotta-color: #E07A5F;
+    --dark-color: #2F2F2F;
+    
+
+    /* ========== Tamanhos de Fonte ========== */
+    --font-size-xs: 0.75rem; /* 12px */
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-md: 1rem; /* 16px */
+    --font-size-lg: 1.25rem; /* 20px */
+    --font-size-hero: clamp(2rem, 5vw, 3rem); /* 32px - 48px */
+
+    /* ========== Espaçamento ========== */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 1rem; /* 16px */
+    --spacing-md: 1.5rem; /* 24px */
+    --spacing-lg: 2rem; /* 32px */  
+    --spacing-xl: 4rem; /* 48px */
+    --spacing-2xl: 5rem; /* 80px */
+    --spacing-3xl: 10rem; /* 96px */
+
+    /* ========== Layout ========== */
+    --header-height: 60px;
+    --padding-section: var(--space-xl) var(--space-2xl);
+
+    /* ========== Bordas & Smbras ========== */
+    --border-radius: 0.45rem; /* 7px */
+    --radius-full: 50%;
+    --border-header: 1px solid rgba(202, 145, 118, 0.15);
+
+    /* ========== Transições ========== */
+    --transition-fast: opacity 0.25s ease;
+    --transition-base: 0.3s ease;
+}
+
+/* ==================== Utilitários ==================== */
+.btn {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    transition: opacity var(--transition-base);
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-dark {
+    background-color: var(--dark-color);
+    color: var(--cream-color);
+}
