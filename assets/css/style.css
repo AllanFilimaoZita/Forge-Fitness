@@ -471,3 +471,197 @@ button {
     height: 100%;
     object-fit: cover;
 }
+
+/* ==================== Explore Courses + Testimonial ==================== */
+.explore-courses-section {
+    background-color: var(--cream-color);
+    position: relative;
+    padding-bottom: 80px;
+}
+
+/* Top Section */
+.explore-top {
+    padding: var(--space-3xl) var(--space-2xl) 220px; /* Aumentado para dar espaço à imagem */
+    text-align: center;
+    background-color: var(--cream-color);
+}
+
+.explore-content {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.explore-heading {
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--dark-color);
+}
+
+.explore-description {
+    font-size: var(--font-size-md);
+    max-width: 620px;
+    opacity: 0.8;
+    line-height: 1.65;
+}
+
+.explore-btn {
+    background-color: var(--dark-color);
+    color: var(--cream-color);
+    padding: 1.15rem 2.8rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-base);
+}
+
+.explore-btn:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-4px);
+}
+
+/* ==================== Video - Posição Absoluta ==================== */
+.video-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 42%;                    /* Ajustado para ficar bem no meio */
+    z-index: 10;
+    max-width: 680px;            /* Reduzido ainda mais */
+    width: 88%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -15px rgb(0 0 0 / 0.35);
+}
+
+.video-image {
+    width: 100%;
+    height: 380px;               /* Altura reduzida conforme pedido */
+    object-fit: cover;
+    display: block;
+}
+
+.play-button-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 82px;
+    height: 82px;
+    background-color: var(--terracotta-color);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 15px 35px rgba(224, 122, 95, 0.45);
+}
+
+.play-button-large:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: #e68a70;
+}
+
+/* ==================== Testimonial ==================== */
+.testimonial-container {
+    background-color: var(--dark-color);
+    color: var(--cream-color);
+    padding: 140px var(--space-2xl) var(--space-3xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.testimonial-content {
+    flex: 1;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.quote-icon {
+    font-size: 6.5rem;
+    line-height: 1;
+    opacity: 0.25;
+    color: white;
+    margin-bottom: -2rem;
+    font-family: serif;
+}
+
+.testimonial-text {
+    font-size: 1.45rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: white;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.author-role {
+    font-size: 0.95rem;
+    opacity: 0.75;
+}
+
+/* Navigation Arrows */
+.testimonial-controls {
+    display: flex;
+    gap: var(--space-sm);
+    align-self: flex-end;
+}
+
+.nav-arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: var(--terracotta-color);
+    color: var(--dark-color);
+    border-color: var(--terracotta-color);
+    transform: scale(1.05);
+}
