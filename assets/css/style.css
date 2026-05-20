@@ -158,6 +158,145 @@ button {
     border-radius: var(--radius-sm);
 }
 
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.nav-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    max-width: 85vw;
+    background-color: var(--cream-color);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-xl);
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.nav-sidebar.is-active {
+    transform: translateX(0);
+}
+
+.nav-sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-sidebar__logo img {
+    height: 36px;
+    width: auto;
+}
+
+.nav-sidebar__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    color: var(--dark-color);
+    transition: opacity var(--transition-base);
+}
+
+.nav-sidebar__close:hover {
+    opacity: 0.6;
+}
+
+.nav-sidebar__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    flex: 1;
+}
+
+.nav-sidebar__link {
+    display: block;
+    padding: 0.7rem var(--space-sm);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--dark-color);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.nav-sidebar__link:hover,
+.nav-sidebar__link.is-active {
+    background-color: rgba(202, 145, 118, 0.12);
+    color: var(--terracotta-color);
+}
+
+.nav-sidebar__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(47, 47, 47, 0.1);
+}
+
+.nav-sidebar__cart {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--dark-color);
+    padding: 0.5rem var(--space-sm);
+    border-radius: var(--border-radius);
+    transition: color var(--transition-base);
+}
+
+.nav-sidebar__cart:hover {
+    color: var(--terracotta-color);
+}
+
+.nav-sidebar__social {
+    display: flex;
+    gap: 0.6rem;
+    padding-left: var(--space-sm);
+}
+
+.nav-sidebar__social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(47, 47, 47, 0.25);
+    font-size: 1rem;
+    color: var(--dark-color);
+    transition: border-color var(--transition-base), color var(--transition-base);
+}
+
+.nav-sidebar__social a:hover {
+    border-color: var(--terracotta-color);
+    color: var(--terracotta-color);
+}
+
+body.nav-is-open {
+    overflow: hidden;
+}
+
 /* ==================== Hero Section ==================== */
 .hero-section {
     display: flex;
@@ -259,7 +398,6 @@ button {
     line-height: 1.6;
 }
 
-/* Carousel */
 .learn-carousel-wrapper {
     position: relative;
 }
@@ -286,7 +424,6 @@ button {
     gap: var(--space-sm);
 }
 
-/* Imagem com overlay de play */
 .card-image-wrapper {
     position: relative;
     border-radius: var(--border-radius);
@@ -325,7 +462,6 @@ button {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* Card Content */
 .card-title {
     font-size: 1.25rem;
     font-weight: 600;
@@ -338,7 +474,6 @@ button {
     opacity: 0.9;
 }
 
-/* Controls */
 .learn-controls {
     display: flex;
     gap: var(--space-sm);
@@ -479,9 +614,8 @@ button {
     padding-bottom: 80px;
 }
 
-/* Top Section */
 .explore-top {
-    padding: var(--space-3xl) var(--space-2xl) 220px; /* Aumentado para dar espaço à imagem */
+    padding: var(--space-3xl) var(--space-2xl) 220px;
     text-align: center;
     background-color: var(--cream-color);
 }
@@ -531,9 +665,9 @@ button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 40%;                    /* Ajustado para ficar bem no meio */
+    top: 40%;
     z-index: 10;
-    max-width: 680px;            /* Reduzido ainda mais */
+    max-width: 680px;
     width: 88%;
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -542,7 +676,7 @@ button {
 
 .video-image {
     width: 100%;
-    height: 380px;               /* Altura reduzida conforme pedido */
+    height: 380px;
     object-fit: cover;
     display: block;
 }
