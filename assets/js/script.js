@@ -87,3 +87,40 @@ document.addEventListener('DOMContentLoaded', () => {
     HeroScroll.init();
     Header.init();
 });
+
+// ==================== Carroussel ====================
+const Carousel = (() => {
+    const SCROLL_AMOUNT = 300;
+ 
+    const init = () => {
+        const carousel = $('#learn-carousel');
+        const prevBtn  = $('#prevBtn');
+        const nextBtn  = $('#nextBtn');
+ 
+        if (!carousel || !prevBtn || !nextBtn) return;
+ 
+        prevBtn.addEventListener('click', () => scrollBy(carousel, -SCROLL_AMOUNT));
+        nextBtn.addEventListener('click', () => scrollBy(carousel,  SCROLL_AMOUNT));
+ 
+        carousel.addEventListener('scroll', () => updateButtons(carousel, prevBtn, nextBtn), { passive: true });
+ 
+        updateButtons(carousel, prevBtn, nextBtn);
+    };
+ 
+    const scrollBy = (el, amount) => {
+        el.scrollBy({ left: amount, behavior: 'smooth' });
+    };
+ 
+    const updateButtons = (carousel, prev, next) => {
+        const { scrollLeft, scrollWidth, clientWidth } = carousel;
+        const atStart = scrollLeft <= 0;
+        const atEnd   = scrollLeft + clientWidth >= scrollWidth - 1;
+ 
+        prev.style.opacity = atStart ? '0.35' : '1';
+        next.style.opacity = atEnd   ? '0.35' : '1';
+        prev.disabled = atStart;
+        next.disabled = atEnd;
+    };
+ 
+    return { init };
+})();
