@@ -531,7 +531,7 @@ button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 42%;                    /* Ajustado para ficar bem no meio */
+    top: 40%;                    /* Ajustado para ficar bem no meio */
     z-index: 10;
     max-width: 680px;            /* Reduzido ainda mais */
     width: 88%;
@@ -670,56 +670,69 @@ button {
 }
 
 .footer-main {
-    padding: var(--space-2xl) var(--space-2xl);
+    padding: var(--space-xl) var(--space-2xl);
 }
 
 .footer-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    /* Brand column ligeiramente maior para acomodar logo + texto + ícones */
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
     gap: var(--space-2xl);
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
+/* ==================== Brand Column ==================== */
 .footer-brand {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
 }
 
 .footer-logo img {
-    height: 48px;
+    /* Logo compacto, como na imagem */
+    height: 38px;
     width: auto;
 }
 
 .footer-description {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     line-height: 1.7;
-    max-width: 260px;
-    opacity: 0.85;
+    max-width: 220px;
+    opacity: 0.75;
+    color: var(--dark-color);
 }
 
+/* FIX: ícones com borda circular, como na imagem */
 .social-icons {
     display: flex;
-    gap: 1rem;
-    margin-top: var(--space-sm);
+    gap: 0.6rem;
+    margin-top: var(--space-xs);
 }
 
 .social-icons a {
-    font-size: 1.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(47, 47, 47, 0.3);
+    font-size: 1rem;
     color: var(--dark-color);
-    transition: var(--transition-base);
+    transition: border-color var(--transition-base), color var(--transition-base);
 }
 
 .social-icons a:hover {
+    border-color: var(--terracotta-color);
     color: var(--terracotta-color);
-    transform: translateY(-3px);
 }
 
+/* ==================== Nav Columns ==================== */
 .footer-heading {
-    font-size: 1.15rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     color: var(--dark-color);
 }
 
@@ -727,13 +740,14 @@ button {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.65rem;
 }
 
 .footer-links a {
+    font-size: var(--font-size-xs);
     color: var(--dark-color);
-    opacity: 0.8;
-    transition: var(--transition-base);
+    opacity: 0.7;
+    transition: opacity var(--transition-base), color var(--transition-base);
 }
 
 .footer-links a:hover {
@@ -741,12 +755,50 @@ button {
     color: var(--terracotta-color);
 }
 
-/* Bottom Bar */
+/* ==================== Bottom Bar ==================== */
 .footer-bottom {
     background-color: var(--dark-color);
     color: var(--cream-color);
     text-align: center;
-    padding: 1.25rem 0;
-    font-size: 0.9rem;
-    opacity: 0.9;
+    padding: 1rem 0;
+    font-size: var(--font-size-xs);
+    opacity: 0.95;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
 }
