@@ -1,9 +1,11 @@
 // ==================== Utilitários ====================
+
 const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) => context.querySelectorAll(selector);
 
 
 // ==================== Menu Mobile ====================
+
 const MobileMenu = (() => {
 
     let sidebar, overlay, openBtn, closeBtn, links;
@@ -31,30 +33,7 @@ const MobileMenu = (() => {
 
     const handleKeydown = (e) => {
         if (!isOpen) return;
-    };
-
-    const init = () => {
-        sidebar  = $('#navMenu');
-        overlay  = $('#navOverlay');
-        openBtn  = $('#header-toggle');
-        closeBtn = $('#navClose');
-        links    = $$('.nav-sidebar__link');
-
-        if (!sidebar || !overlay || !openBtn || !closeBtn) return;
-
-        openBtn.addEventListener('click', open);
-        closeBtn.addEventListener('click', close);
-        overlay.addEventListener('click', close);
-
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                close();
-            });
-        });
-
-        document.addEventListener('keydown', handleKeydown);
-
-        observeSections();
+        if (e.key === 'Escape') close();
     };
 
     const observeSections = () => {
@@ -77,66 +56,114 @@ const MobileMenu = (() => {
         sections.forEach(section => observer.observe(section));
     };
 
-    return { init, open, close };
+    const init = () => {
+        sidebar  = $('#navMenu');
+        overlay  = $('#navOverlay');
+        openBtn  = $('#header-toggle');
+        closeBtn = $('#navClose');
+        links    = $$('.nav-sidebar__link');
+
+        if (!sidebar || !overlay || !openBtn || !closeBtn) return;
+
+        openBtn.addEventListener('click', open);
+        closeBtn.addEventListener('click', close);
+        overlay.addEventListener('click', close);
+
+        links.forEach(link => link.addEventListener('click', close));
+
+        document.addEventListener('keydown', handleKeydown);
+
+        observeSections();
+    };
+
+    return { init };
 })();
 
- 
+
+// ==================== Carrossel ====================
+
+const Carousel = (() => {
+    const SCROLL_AMOUNT = 300;
+
+    const updateButtons = (carousel, prev, next) => {
+        const { scrollLeft, scrollWidth, clientWidth } = carousel;
+        const atStart = scrollLeft <= 0;
+        const atEnd   = scrollLeft + clientWidth >= scrollWidth - 1;
+
+        prev.style.opacity = atStart ? '0.35' : '1';
+        next.style.opacity = atEnd   ? '0.35' : '1';
+        prev.disabled = atStart;
+        next.disabled = atEnd;
+    };
+
+    const init = () => {
+        const carousel = $('#learn-carousel');
+        const prevBtn  = $('#prevBtn');
+        const nextBtn  = $('#nextBtn');
+
+        if (!carousel || !prevBtn || !nextBtn) return;
+
+        prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' }));
+        nextBtn.addEventListener('click', () => carousel.scrollBy({ left:  SCROLL_AMOUNT, behavior: 'smooth' }));
+
+        carousel.addEventListener('scroll', () => updateButtons(carousel, prevBtn, nextBtn), { passive: true });
+
+        updateButtons(carousel, prevBtn, nextBtn);
+    };
+
+    return { init };
+})();
+
+
+// ==================== Hero Scroll ====================
+
+const HeroScroll = (() => {
+    const init = () => {
+        const btn          = $('.hero-scroll-button');
+        const learnSection = $('#learn-section');
+
+        if (!btn || !learnSection) return;
+
+        btn.addEventListener('click', () => {
+            learnSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    };
+
+    return { init };
+})();
+
+
+// ==================== Header ====================
+
+const Header = (() => {
+    const init = () => {
+        const header = $('#header');
+        if (!header) return;
+
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (ticking) return;
+            requestAnimationFrame(() => {
+                header.style.boxShadow = window.scrollY > 10
+                    ? '0 2px 16px rgba(47, 47, 47, 0.08)'
+                    : 'none';
+                ticking = false;
+            });
+            ticking = true;
+        }, { passive: true });
+    };
+
+    return { init };
+})();
+
+
+// ==================== Init ====================
+// Todos os módulos declarados acima — só depois chamamos o init
+
 document.addEventListener('DOMContentLoaded', () => {
     MobileMenu.init();
     Carousel.init();
     HeroScroll.init();
     Header.init();
 });
-
-// ==================== Hero Section ====================
-const HeroScroll = (() => {
-    const init = () => {
-        const btn          = $('.hero-scroll-button');
-        const learnSection = $('#learn-section');
- 
-        if (!btn || !learnSection) return;
- 
-        btn.addEventListener('click', () => {
-            learnSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-    };
- 
-    return { init };
-})();
-
-// ==================== Carroussel ====================
-const Carousel = (() => {
-    const SCROLL_AMOUNT = 300;
- 
-    const init = () => {
-        const carousel = $('#learn-carousel');
-        const prevBtn  = $('#prevBtn');
-        const nextBtn  = $('#nextBtn');
- 
-        if (!carousel || !prevBtn || !nextBtn) return;
- 
-        prevBtn.addEventListener('click', () => scrollBy(carousel, -SCROLL_AMOUNT));
-        nextBtn.addEventListener('click', () => scrollBy(carousel,  SCROLL_AMOUNT));
- 
-        carousel.addEventListener('scroll', () => updateButtons(carousel, prevBtn, nextBtn), { passive: true });
- 
-        updateButtons(carousel, prevBtn, nextBtn);
-    };
- 
-    const scrollBy = (el, amount) => {
-        el.scrollBy({ left: amount, behavior: 'smooth' });
-    };
- 
-    const updateButtons = (carousel, prev, next) => {
-        const { scrollLeft, scrollWidth, clientWidth } = carousel;
-        const atStart = scrollLeft <= 0;
-        const atEnd   = scrollLeft + clientWidth >= scrollWidth - 1;
- 
-        prev.style.opacity = atStart ? '0.35' : '1';
-        next.style.opacity = atEnd   ? '0.35' : '1';
-        prev.disabled = atStart;
-        next.disabled = atEnd;
-    };
- 
-    return { init };
-})();
