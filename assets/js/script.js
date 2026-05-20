@@ -88,6 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
     Header.init();
 });
 
+// ==================== Hero Section ====================
+const HeroScroll = (() => {
+    const init = () => {
+        const btn          = $('.hero-scroll-button');
+        const learnSection = $('#learn-section');
+ 
+        if (!btn || !learnSection) return;
+ 
+        btn.addEventListener('click', () => {
+            learnSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    };
+ 
+    return { init };
+})();
+
 // ==================== Carroussel ====================
 const Carousel = (() => {
     const SCROLL_AMOUNT = 300;
