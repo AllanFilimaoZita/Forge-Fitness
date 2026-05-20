@@ -1,18 +1,40 @@
-/* ==================== Import Extwernal CSS ==================== */
-@import url('assets/css/style.css');
+/* ====================
+   FORGE FITNESS — responsive.css
+   NOTA: @import removido — style.css é carregado diretamente no HTML.
+         @import dentro de CSS cria carregamento em cascata (render-blocking).
+   ==================== */
 
-/* ==================== RESPONSIVE ==================== */
+/* ====================
+   TABLET GRANDE — 1024px
+   ==================== */
+
 @media (max-width: 1024px) {
     :root {
-        --space-2xl: 3rem;;
+        --space-2xl: 3rem;
         --space-3xl: 6rem;
     }
 
+    /* --- Healthy --- */
+    .healthy-content {
+        padding: var(--space-xl) 3rem;
+    }
+
+    .healthy-heading {
+        width: 100%;
+    }
+
+    /* --- Explore / Vídeo --- */
+    .video-wrapper {
+        width: 84%;
+        max-width: 560px;
+    }
+
+    /* --- Footer --- */
     .footer-container {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-xl);
     }
- 
+
     .footer-brand {
         grid-column: 1 / -1;
         flex-direction: row;
@@ -22,12 +44,16 @@
     }
 }
 
+/* ====================
+   TABLET — 768px
+   ==================== */
+
 @media (max-width: 768px) {
     :root {
         --space-2xl: 1.5rem;
         --space-3xl: 4rem;
     }
-    
+
     .header {
         padding: 0 var(--space-md);
     }
@@ -62,16 +88,29 @@
         padding: var(--space-2xl) var(--space-md);
     }
 
+    .learn-header {
+        margin-bottom: var(--space-lg);
+    }
+
     .learn-carousel {
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
 
     .card {
-        min-width: 260px;
+        min-width: 240px;
     }
 
     .card-image {
-        height: 200px;
+        height: 180px;
+    }
+
+    .learn-controls {
+        margin-top: var(--space-md);
+    }
+
+    .learn-nav-btn {
+        width: 44px;
+        height: 44px;
     }
 
     .healthy-section {
@@ -81,7 +120,26 @@
 
     .healthy-gallery {
         width: 100%;
-        min-height: 50vh;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        position: static;
+    }
+
+    .healthy-img {
+        position: static;
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    .healthy-img-back,
+    .healthy-img-front {
+        width: 100%;
+        height: 260px;
+        top: auto;
+        left: auto;
+        z-index: auto;
     }
 
     .healthy-content {
@@ -106,6 +164,67 @@
         min-height: 50vh;
     }
 
+    .explore-courses-section {
+        padding-bottom: 0;
+    }
+
+    .explore-top {
+        padding: var(--space-2xl) var(--space-md) var(--space-lg);
+    }
+
+    .explore-heading {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+    }
+
+    .explore-description {
+        font-size: var(--font-size-sm);
+    }
+
+    .explore-btn {
+        padding: 0.85rem 1.5rem;
+        font-size: var(--font-size-xs);
+    }
+
+    .video-wrapper {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .video-image {
+        height: 260px;
+    }
+
+    .play-button-large {
+        width: 60px;
+        height: 60px;
+    }
+
+    .play-button-large svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .testimonial-container {
+        padding: var(--space-2xl) var(--space-md);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xl);
+    }
+
+    .testimonial-text {
+        font-size: 1.15rem;
+    }
+
+    .quote-icon {
+        font-size: 4rem;
+        margin-bottom: -1rem;
+    }
+
     .footer-main {
         padding: var(--space-xl) var(--space-md);
     }
@@ -121,8 +240,44 @@
     }
 }
 
+/* ====================
+   MOBILE PEQUENO — 480px
+   ==================== */
+
 @media (max-width: 480px) {
+
+    .hero-heading {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
+
+    .card {
+        min-width: calc(100vw - 3rem);
+    }
+
+    .explore-heading {
+        font-size: 1.8rem;
+    }
+
     .footer-container {
         grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+}
+
+/* ====================
+   REDUCED MOTION — Acessibilidade
+   ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
