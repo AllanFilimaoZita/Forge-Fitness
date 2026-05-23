@@ -1,54 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Forge Fitness — Yoga Studio em Sidney. Promovemos um estilo de vida saudável através da prática de yoga e mindfulness. Aulas presenciais e online." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Forge Fitness — Yoga Studio em Sidney. Promovemos um estilo de vida saudável através da prática de yoga e mindfulness. Aulas presenciais e online." />
     <meta name="theme-color" content="#FEF4EB" />
 
-    <!-- ==================== Open Graph ==================== -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Forge Fitness | Landing Page" />
-    <meta property="og:description"
-        content="Forge Fitness — Yoga Studio em Sidney. Promovemos um estilo de vida saudável através da prática de yoga e mindfulness. Aulas presenciais e online." />
+    <meta property="og:description" content="Forge Fitness — Yoga Studio em Sidney. Promovemos um estilo de vida saudável através da prática de yoga e mindfulness. Aulas presenciais e online." />
     <meta property="og:image" content="https://example.com/forge-fitness-og-image.jpg" />
     <meta property="og:url" content="https://example.com/forge-fitness" />
 
     <title>Forge Fitness | Landing Page</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
+
     <!-- ==================== Header ==================== -->
     <header class="header" id="header">
-        <button header-toggle id="header-toggle" aria-label="Abrir menu de navegação" aria-expanded="false"
-            aria-controls="navMenu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                aria-hidden="true" focusable="false">
+
+        <button class="header-toggle" id="header-toggle" aria-label="Abrir menu de navegação"
+            aria-expanded="false" aria-controls="navMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true" focusable="false">
                 <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z" />
             </svg>
         </button>
 
         <a href="/" class="header-logo" aria-label="Forge Fitness - Página Inicial">
-            <img src="assets/images/logo-rb.png" alt="Forge Fitness" width="120" height="40"">
+            <img src="assets/images/logo-rb.png" alt="Forge Fitness" width="120" height="40" />
         </a>
 
-        <a href=" /cart" class="header-cart" aria-label="Ver Carrinho de Compras">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                aria-hidden="true" focusable="false">
-                <path
-                    d="M7.00488 7.99966V5.99966C7.00488 3.23824 9.24346 0.999664 12.0049 0.999664C14.7663 0.999664 17.0049 3.23824 17.0049 5.99966V7.99966H20.0049C20.5572 7.99966 21.0049 8.44738 21.0049 8.99966V20.9997C21.0049 21.5519 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.5519 3.00488 20.9997V8.99966C3.00488 8.44738 3.4526 7.99966 4.00488 7.99966H7.00488ZM7.00488 9.99966H5.00488V19.9997H19.0049V9.99966H17.0049V11.9997H15.0049V9.99966H9.00488V11.9997H7.00488V9.99966ZM9.00488 7.99966H15.0049V5.99966C15.0049 4.34281 13.6617 2.99966 12.0049 2.99966C10.348 2.99966 9.00488 4.34281 9.00488 5.99966V7.99966Z" />
-            </svg>
-        </a>
+        <div class="header-actions">
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Ativar modo escuro">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+                </svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm9-9a1 1 0 0 1 0 2h-1a1 1 0 1 1 0-2h1zM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm14.95-6.95a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0zM7.05 16.95a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0zm11.9 1.41a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41zM7.05 7.05a1 1 0 0 1-1.41 0l-.71-.71A1 1 0 0 1 6.34 4.93l.71.71a1 1 0 0 1 0 1.41zM12 7a5 5 0 1 1 0 10A5 5 0 0 1 12 7z" />
+                </svg>
+            </button>
+
+            <a href="/cart" class="header-cart" aria-label="Ver Carrinho de Compras">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d="M7.00488 7.99966V5.99966C7.00488 3.23824 9.24346 0.999664 12.0049 0.999664C14.7663 0.999664 17.0049 3.23824 17.0049 5.99966V7.99966H20.0049C20.5572 7.99966 21.0049 8.44738 21.0049 8.99966V20.9997C21.0049 21.5519 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.5519 3.00488 20.9997V8.99966C3.00488 8.44738 3.4526 7.99966 4.00488 7.99966H7.00488ZM7.00488 9.99966H5.00488V19.9997H19.0049V9.99966H17.0049V11.9997H15.0049V9.99966H9.00488V11.9997H7.00488V9.99966ZM9.00488 7.99966H15.0049V5.99966C15.0049 4.34281 13.6617 2.99966 12.0049 2.99966C10.348 2.99966 9.00488 4.34281 9.00488 5.99966V7.99966Z" />
+                </svg>
+            </a>
+
+        </div>
+
     </header>
 
     <!-- ==================== Mobile Menu Sidebar ==================== -->
-
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
     <nav class="nav-sidebar" id="navMenu" aria-label="Menu de navegação mobile" aria-hidden="true">
@@ -58,8 +72,8 @@
                 <img src="assets/images/logo-rb.png" alt="Forge Fitness" height="36" />
             </a>
             <button class="nav-sidebar__close" id="navClose" aria-label="Fechar menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
-                    aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="currentColor" aria-hidden="true">
                     <path d="M18.364 5.636L5.636 18.364M5.636 5.636l12.728 12.728" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" />
                 </svg>
@@ -69,12 +83,20 @@
         <ul class="nav-sidebar__links" role="list">
             <li><a href="#hero-section" class="nav-sidebar__link">Home</a></li>
             <li><a href="#learn-section" class="nav-sidebar__link">Learn</a></li>
-            <li><a href="#healthy-section" class="nav-sidebar__link">Aboyt Us</a></li>
+            <li><a href="#healthy-section" class="nav-sidebar__link">About Us</a></li>
             <li><a href="#journey-section" class="nav-sidebar__link">Journey</a></li>
             <li><a href="#courses-section" class="nav-sidebar__link">Courses</a></li>
         </ul>
 
         <div class="nav-sidebar__footer">
+
+            <a href="/cart" class="nav-sidebar__cart" aria-label="Ver carrinho de compras">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="currentColor" aria-hidden="true">
+                    <path d="M7.00488 7.99966V5.99966C7.00488 3.23824 9.24346 0.999664 12.0049 0.999664C14.7663 0.999664 17.0049 3.23824 17.0049 5.99966V7.99966H20.0049C20.5572 7.99966 21.0049 8.44738 21.0049 8.99966V20.9997C21.0049 21.5519 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.5519 3.00488 20.9997V8.99966C3.00488 8.44738 3.4526 7.99966 4.00488 7.99966H7.00488ZM7.00488 9.99966H5.00488V19.9997H19.0049V9.99966H17.0049V11.9997H15.0049V9.99966H9.00488V11.9997H7.00488V9.99966ZM9.00488 7.99966H15.0049V5.99966C15.0049 4.34281 13.6617 2.99966 12.0049 2.99966C10.348 2.99966 9.00488 4.34281 9.00488 5.99966V7.99966Z" />
+                </svg>
+                Cart
+            </a>
 
             <div class="nav-sidebar__social" aria-label="Redes sociais">
                 <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
@@ -87,47 +109,41 @@
 
     </nav>
 
-    <!-- ==================== Hero Section ==================== -->
+    <!-- ==================== Main ==================== -->
     <main id="main-content" class="main-content">
 
-        <section class="hero-section" id="hero-section" aria-label="Hero Section">
-            <div class="hero-content" id="hero-content">
-                <h1 class="hero-heading">Relax. Recline <br> Wind Down.</h1>
-
+        <!-- ==================== Hero Section ==================== -->
+        <section class="hero-section" id="hero-section" aria-labelledby="heroHeading">
+            <div class="hero-content">
+                <h1 class="hero-heading" id="heroHeading">Relax. Recline <br /> Wind Down.</h1>
                 <p class="hero-description">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus reprehenderit dolore natus!
                     Quam, minima possimus eius aut neque reiciendis quisquam, quis voluptas eos incidunt similique
                     facilis. Sunt distinctio aliquid consectetur!
                 </p>
-
-                <a href="#learn" class="btn-dark btn">Get Started</a>
+                <a href="#learn-section" class="btn btn-dark">Get Started</a>
             </div>
 
-            <div id="hero-visual" class="hero-visual" aria-hidden="true">
-
-                <img class="hero-image" src="assets/images/image15.png" alt="Pessoa Praticando Yoga em Postura Relaxada"
-                    width="600" height="400">
-
-                <button class="hero-scroll-button" aria-label="Scrolla para a próxima seção">
+            <div class="hero-visual" aria-hidden="true">
+                <img class="hero-image" src="assets/images/image15.png"
+                    alt="Pessoa Praticando Yoga em Postura Relaxada" width="600" height="400" loading="eager" />
+                <button class="hero-scroll-button" id="heroScrollBtn" aria-label="Rolar para a próxima secção">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"
                         fill="currentColor" aria-hidden="true">
-                        <path
-                            d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z" />
+                        <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z" />
                     </svg>
                 </button>
-
             </div>
         </section>
 
         <!-- ==================== Learn Section ==================== -->
-        <section class="learn-section" id="learn-section" aria-labelledby="learn-heading">
+        <section class="learn-section" id="learn-section" aria-labelledby="learnHeading">
 
             <div class="learn-header">
-                <h2 class="learn-heading" id="learn-heading">Learn with us</h2>
+                <h2 class="learn-heading" id="learnHeading">Learn with us</h2>
                 <p class="learn-description">
                     But must I explain to you how all this mistaken idea of denouncing pleasure and praising pain was
-                    born
-                    and I will give you a complete account of the system.
+                    born and I will give you a complete account of the system.
                 </p>
             </div>
 
@@ -136,13 +152,11 @@
 
                     <article class="card" role="listitem">
                         <div class="card-image-wrapper">
-                            <img src="assets/images/img44.png" alt="Morning Routine For Beginners" class="card-image"
-                                loading="lazy">
-                            <div class="play-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                            <img src="assets/images/img44.png" alt="Morning Routine For Beginners"
+                                class="card-image" loading="lazy" />
+                            <div class="play-overlay" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
                                 </svg>
                             </div>
                         </div>
@@ -152,12 +166,10 @@
 
                     <article class="card" role="listitem">
                         <div class="card-image-wrapper">
-                            <img src="assets/images/img30.png" alt="Yoga In House" class="card-image" loading="lazy">
-                            <div class="play-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                            <img src="assets/images/img30.png" alt="Yoga In House" class="card-image" loading="lazy" />
+                            <div class="play-overlay" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
                                 </svg>
                             </div>
                         </div>
@@ -167,12 +179,10 @@
 
                     <article class="card" role="listitem">
                         <div class="card-image-wrapper">
-                            <img src="assets/images/img26.png" alt="Yoga In House" class="card-image" loading="lazy">
-                            <div class="play-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                            <img src="assets/images/img26.png" alt="Balance Yoga" class="card-image" loading="lazy" />
+                            <div class="play-overlay" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
                                 </svg>
                             </div>
                         </div>
@@ -182,61 +192,60 @@
 
                     <article class="card" role="listitem">
                         <div class="card-image-wrapper">
-                            <img src="assets/images/img40.jpg" alt="Yoga In House" class="card-image" loading="lazy">
-                            <div class="play-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
+                            <img src="assets/images/img40.jpg" alt="Yoga In Beach" class="card-image" loading="lazy" />
+                            <div class="play-overlay" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
                                 </svg>
                             </div>
                         </div>
-                        <h3 class="card-title">Yoga In House</h3>
+                        <h3 class="card-title">Yoga In Beach</h3>
                         <p class="card-meta">30 mins · relaxation &amp; stretching</p>
                     </article>
+
                 </div>
 
-                <div class="learn-controls">
-                    <button class="learn-nav-btn" id="prevBtn" aria-label="Anterior">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                            fill="currentColor">
+                <div class="learn-controls" role="group" aria-label="Controles do carrossel">
+                    <button class="learn-nav-btn" id="prevBtn" aria-label="Aula anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                         </svg>
                     </button>
-                    <button class="learn-nav-btn" id="nextBtn" aria-label="Próxima">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                            fill="currentColor">
+                    <button class="learn-nav-btn" id="nextBtn" aria-label="Próxima aula">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
                         </svg>
                     </button>
                 </div>
             </div>
+
         </section>
 
+        <!-- ==================== Healthy Section ==================== -->
         <section class="healthy-section" id="healthy-section" aria-labelledby="healthyHeading">
 
-            <div class="healthy-gallery" id="healthy-gallery" aria-hidden="true">
-                <img src="assets/images/img48.jpg" alt="" class="healthy-img healthy-img-back" width="400" height="500"
-                    loading="lazy" />
-                <img src="assets/images/img36.png" alt="" class="healthy-img healthy-img-front" width="400" height="500"
-                    loading="lazy" />
+            <div class="healthy-gallery" aria-hidden="true">
+                <img src="assets/images/img48.jpg" alt="" class="healthy-img healthy-img-back"
+                    width="400" height="500" loading="lazy" />
+                <img src="assets/images/img36.png" alt="" class="healthy-img healthy-img-front"
+                    width="400" height="500" loading="lazy" />
             </div>
 
-            <div class="healthy-content" id="healthy-content">
-                <h2 class="healthy-heading" id="healthy-heading">Healthy lifestyles with yoga</h2>
+            <div class="healthy-content">
+                <h2 class="healthy-heading" id="healthyHeading">Healthy lifestyles with yoga</h2>
                 <p class="healthy-description">
                     We are a Yoga Studio based in Sydney, Australia. Our goal is to promote a healthy lifestyle through
                     practice of yoga and mindfulness. Classes are held in our studio space and online.
                     Everyone is welcome to join our little community.
                 </p>
-
-                <a href="/about" class="btn-dark btn">About Us</a>
+                <a href="/about" class="btn btn-dark">About Us</a>
             </div>
 
         </section>
 
-        <!-- ==================== Jouney Section ==================== -->
+        <!-- ==================== Journey Section ==================== -->
         <section class="journey-section" id="journey-section" aria-labelledby="journeyHeading">
+
             <div class="journey-content">
                 <h2 class="journey-heading" id="journeyHeading">Start with us the body and mind cleansing</h2>
                 <p class="journey-description">
@@ -247,50 +256,47 @@
             </div>
 
             <div class="journey-visual" aria-hidden="true">
-                <img src="assets/images/img22.png" alt="" class="journey-image" width="500" height="600"
-                    loading="lazy" />
+                <img src="assets/images/img22.png" alt="" class="journey-image"
+                    width="500" height="600" loading="lazy" />
             </div>
+
         </section>
 
-        <!-- ==================== Explore Courses + Testimonial Section ==================== -->
-        <section class="explore-courses-section" id="courses-section">
+        <!-- ==================== Explore + Testimonial Section ==================== -->
+        <section class="explore-courses-section" id="courses-section" aria-labelledby="exploreHeading">
 
-            <!-- Top Content -->
             <div class="explore-top">
                 <div class="explore-content">
-                    <h2 class="explore-heading">Explore our video<br>courses today.</h2>
+                    <h2 class="explore-heading" id="exploreHeading">Explore our video<br />courses today.</h2>
                     <p class="explore-description">
                         Practice anywhere, anytime. Explore our online classes as a new way to
                         exercise and learn more about yourself.
                     </p>
-                    <a href="#" class="btn explore-btn">WATCH OUR ONLINE COURSES</a>
+                    <a href="#" class="btn explore-btn">Watch Our Online Courses</a>
                 </div>
             </div>
 
-            <!-- Video Image -->
             <div class="video-wrapper">
-                <img src="assets/images/img18.jpg" alt="Pessoa praticando yoga no topo da montanha" class="video-image">
-
+                <img src="assets/images/img18.jpg" alt="Pessoa praticando yoga no topo da montanha"
+                    class="video-image" loading="lazy" />
                 <button class="play-button-large" aria-label="Reproduzir vídeo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 24 24"
-                        fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
                         <path d="M8 5.14v14.72a1 1 0 0 0 1.5.86l11-7.36a1 1 0 0 0 0-1.72L9.5 4.28A1 1 0 0 0 8 5.14z" />
                     </svg>
                 </button>
             </div>
 
-            <!-- Testimonial -->
             <div class="testimonial-container">
                 <div class="testimonial-content">
-                    <span class="quote-icon">“</span>
-
+                    <span class="quote-icon" aria-hidden="true">&#8220;</span>
                     <p class="testimonial-text">
-                        I’ve been to a few different places before but nothing compares to
+                        I've been to a few different places before but nothing compares to
                         this. The flexible schedule is great.
                     </p>
-
                     <div class="testimonial-author">
-                        <img src="assets/images/img10.jpg" alt="Manya Bansal" class="author-avatar">
+                        <img src="assets/images/img10.jpg" alt="Foto de Manya Bansal"
+                            class="author-avatar" width="44" height="44" loading="lazy" />
                         <div class="author-info">
                             <strong class="author-name">Manya Bansal</strong>
                             <span class="author-role">CEO</span>
@@ -298,16 +304,14 @@
                     </div>
                 </div>
 
-                <div class="learn-controls">
-                    <button class="learn-nav-btn" id="prevBtn" aria-label="Anterior">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                            fill="currentColor">
+                <div class="learn-controls" role="group" aria-label="Navegar entre depoimentos">
+                    <button class="learn-nav-btn" id="testimonialPrev" aria-label="Depoimento anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
                         </svg>
                     </button>
-                    <button class="learn-nav-btn" id="nextBtn" aria-label="Próxima">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-                            fill="currentColor">
+                    <button class="learn-nav-btn" id="testimonialNext" aria-label="Próximo depoimento">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
                         </svg>
                     </button>
@@ -315,7 +319,6 @@
             </div>
 
         </section>
-
 
     </main>
 
@@ -326,8 +329,8 @@
             <div class="footer-container">
 
                 <div class="footer-col footer-brand">
-                    <a href="/" class="footer-logo">
-                        <img src="assets/images/logo-rb.png" alt="Forge Fitness" width="150">
+                    <a href="/" class="footer-logo" aria-label="Forge Fitness — Página inicial">
+                        <img src="assets/images/logo-rb.png" alt="Forge Fitness" height="38" />
                     </a>
                     <p class="footer-description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquip.
@@ -345,8 +348,8 @@
                     <ul class="footer-links">
                         <li><a href="/about">About Us</a></li>
                         <li><a href="#">Features</a></li>
-                        <li><a href="#">News & Blog</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">News &amp; Blog</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
                     </ul>
                 </div>
 
@@ -364,7 +367,7 @@
                     <h4 class="footer-heading">Contact Us</h4>
                     <ul class="footer-links">
                         <li><a href="mailto:info@forgefitness.com.au">info@forgefitness.com.au</a></li>
-                        <li><a href="#">Terms & Agreement</a></li>
+                        <li><a href="#">Terms &amp; Agreement</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
@@ -378,8 +381,7 @@
 
     </footer>
 
-
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>

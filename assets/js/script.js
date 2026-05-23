@@ -4,6 +4,40 @@ const $ = (selector, context = document) => context.querySelector(selector);
 const $$ = (selector, context = document) => context.querySelectorAll(selector);
 
 
+// ==================== Dark Mode ====================
+
+const ThemeToggle = (() => {
+
+    const STORAGE_KEY = 'forge-theme';
+    const DARK_CLASS  = 'dark';
+
+    const applyTheme = (isDark) => {
+        document.documentElement.classList.toggle(DARK_CLASS, isDark);
+        const btn = $('#themeToggle');
+        if (btn) btn.setAttribute('aria-label', isDark ? 'Ativar modo claro' : 'Ativar modo escuro');
+    };
+
+    const init = () => {
+        const btn = $('#themeToggle');
+        if (!btn) return;
+
+        const saved       = localStorage.getItem(STORAGE_KEY);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDark      = saved ? saved === 'dark' : prefersDark;
+
+        applyTheme(isDark);
+
+        btn.addEventListener('click', () => {
+            const nowDark = !document.documentElement.classList.contains(DARK_CLASS);
+            applyTheme(nowDark);
+            localStorage.setItem(STORAGE_KEY, nowDark ? 'dark' : 'light');
+        });
+    };
+
+    return { init };
+})();
+
+
 // ==================== Menu Mobile ====================
 
 const MobileMenu = (() => {
@@ -45,10 +79,7 @@ const MobileMenu = (() => {
                 if (!entry.isIntersecting) return;
                 const id = entry.target.getAttribute('id');
                 links.forEach(link => {
-                    link.classList.toggle(
-                        'is-active',
-                        link.getAttribute('href') === `#${id}`
-                    );
+                    link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
                 });
             });
         }, { threshold: 0.4 });
@@ -68,9 +99,7 @@ const MobileMenu = (() => {
         openBtn.addEventListener('click', open);
         closeBtn.addEventListener('click', close);
         overlay.addEventListener('click', close);
-
         links.forEach(link => link.addEventListener('click', close));
-
         document.addEventListener('keydown', handleKeydown);
 
         observeSections();
@@ -119,7 +148,7 @@ const Carousel = (() => {
 
 const HeroScroll = (() => {
     const init = () => {
-        const btn          = $('.hero-scroll-button');
+        const btn          = $('#heroScrollBtn');
         const learnSection = $('#learn-section');
 
         if (!btn || !learnSection) return;
@@ -159,9 +188,9 @@ const Header = (() => {
 
 
 // ==================== Init ====================
-// Todos os módulos declarados acima — só depois chamamos o init
 
 document.addEventListener('DOMContentLoaded', () => {
+    ThemeToggle.init();
     MobileMenu.init();
     Carousel.init();
     HeroScroll.init();
