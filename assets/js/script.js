@@ -109,6 +109,127 @@ const MobileMenu = (() => {
 })();
 
 
+// ==================== Quotes API ====================
+
+const QuotesAPI = (() => {
+
+    const QUOTES = [
+        {
+            text: "The only bad workout is the one that didn't happen.",
+            author: "Unknown",
+            role: "Fitness Wisdom"
+        },
+        {
+            text: "Take care of your body. It's the only place you have to live.",
+            author: "Jim Rohn",
+            role: "Entrepreneur & Author"
+        },
+        {
+            text: "Strength does not come from the physical capacity. It comes from an indomitable will.",
+            author: "Mahatma Gandhi",
+            role: "Leader & Philosopher"
+        },
+        {
+            text: "The pain you feel today will be the strength you feel tomorrow.",
+            author: "Arnold Schwarzenegger",
+            role: "Athlete & Actor"
+        },
+        {
+            text: "Fitness is not about being better than someone else. It's about being better than you used to be.",
+            author: "Khloe Kardashian",
+            role: "Entrepreneur"
+        },
+        {
+            text: "Your body can stand almost anything. It's your mind that you have to convince.",
+            author: "Andrew Murphy",
+            role: "Motivational Speaker"
+        },
+        {
+            text: "Success usually comes to those who are too busy to be looking for it.",
+            author: "Henry David Thoreau",
+            role: "Author & Philosopher"
+        },
+        {
+            text: "If it doesn't challenge you, it doesn't change you.",
+            author: "Fred DeVito",
+            role: "Fitness Instructor"
+        }
+    ];
+
+    const state = {
+        currentIndex: 0,
+        isLoading: false,
+        total: QUOTES.length
+    };
+
+    let elements = {};
+
+    const fetchQuote = async (index) => {
+        await new Promise(resolve => setTimeout(resolve, 200));
+        return QUOTES[index];
+    };
+
+    const renderQuote = (quote) => {
+        const initial = quote.author.charAt(0).toUpperCase();
+
+        elements.text.textContent   = quote.text;
+        elements.author.textContent = quote.author;
+        elements.role.textContent   = quote.role;
+        elements.avatar.textContent = initial;
+        elements.counter.textContent = `${state.currentIndex + 1} / ${state.total}`;
+    };
+
+    const loadQuote = async (index) => {
+        if (state.isLoading) return;
+
+        state.isLoading = true;
+        elements.btn.classList.add('is-loading');
+        elements.section.classList.add('quote-is-fading');
+
+        try {
+            const quote = await fetchQuote(index);
+
+            await new Promise(resolve => setTimeout(resolve, 300));
+
+            renderQuote(quote);
+
+            elements.section.classList.remove('quote-is-fading');
+
+        } catch (error) {
+            console.error('Erro ao carregar quote:', error);
+            elements.text.textContent = 'Não foi possível carregar a frase. Tenta novamente.';
+            elements.section.classList.remove('quote-is-fading');
+        } finally {
+            state.isLoading = false;
+            elements.btn.classList.remove('is-loading');
+        }
+    };
+
+    const nextQuote = () => {
+        state.currentIndex = (state.currentIndex + 1) % state.total;
+        loadQuote(state.currentIndex);
+    };
+
+    const init = () => {
+        elements.section = $('#quotesSection');
+        elements.text    = $('#quoteText');
+        elements.author  = $('#quoteAuthor');
+        elements.role    = $('#quoteRole');
+        elements.avatar  = $('#quoteAvatar');
+        elements.counter = $('#quotesCounter');
+        elements.btn     = $('#newQuoteBtn');
+
+        if (!elements.section || !elements.btn) return;
+
+        loadQuote(state.currentIndex);
+
+        elements.btn.addEventListener('click', nextQuote);
+    };
+
+    return { init };
+})();
+
+
 // ==================== Carrossel ====================
 
 const Carousel = (() => {
@@ -192,6 +313,7 @@ const Header = (() => {
 document.addEventListener('DOMContentLoaded', () => {
     ThemeToggle.init();
     MobileMenu.init();
+    QuotesAPI.init();
     Carousel.init();
     HeroScroll.init();
     Header.init();
